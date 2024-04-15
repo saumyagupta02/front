@@ -1,0 +1,52 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+@keyframes move {
+    0% { transform: translateX(25%); 
+    opacity: 5; background-color: aqua;
+    transition-delay: 2s;
+ }
+    25%{transform: translateY(50%);
+        transition-delay: 2s;
+    background-color: blueviolet;}
+    50% {transform: rotate(90deg);}
+    100% { transform: translateX(100%); 
+    }
+}
+
+.car {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 70px auto;
+    animation: move 2s linear infinite;
+    animation-direction: reverse;
+}
+
+.wheel {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    bottom: 3px;
+}
+
+.wheel:nth-child(1) { left: 25px; }
+.wheel:nth-child(2) { left: 60px; }
+.wheel:nth-child(3) { left: 25px; bottom: 25px; }
+.wheel:nth-child(4) { left: 60px; bottom: 25px; }
+</style>
+</head>
+<body>
+    <div class="car">
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+        <div class="wheel"></div>
+    </div>
+</body>
+</html>
